@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+# © 2022 PCCube
+# @author: vcS <vcavallarosilva@pccube.com>
+# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+    <template id="book_list_extended"
+            name="Extended Book List"
+            inherit_id="library.book_list_template">
+        <xpath expr="//span[@t-field='book.publisher_id']" position="after">
+            <t t-if="not book.is_available">
+            <b>(Not Available)</b>
+            </t>
+        </xpath>
+    </template>
+</odoo>

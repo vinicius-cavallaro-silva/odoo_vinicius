@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+# © 2022 PCCube
+# @author: vcS <vcavallarosilva@pccube.com>
+# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+    <act_window id="action_library_member"
+        name="Library Members"
+        res_model="library.member"
+        view_mode="tree,form" />
+    <menuitem id="menu_library_member"
+        name="Members"
+        action="action_library_member"
+        parent="library.library_menu" />
+</odoo>

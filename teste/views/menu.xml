@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+# © 2022 PCCube
+# @author: vcS <vcavallarosilva@pccube.com>
+# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+    <menuitem id="teste_menu"
+        name="Teste"
+        sequence="150"/>
+
+        <menuitem id="menu_teste" parent="teste_menu" name="Teste"
+			  sequence="10" action="teste_action" />
+</odoo>

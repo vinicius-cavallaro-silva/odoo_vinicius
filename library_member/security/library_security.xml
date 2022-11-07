@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<!--
+# © 2022 PCCube
+# @author: vcS <vcavallarosilva@pccube.com>
+# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+    <!-- Modify Group name -->
+    <record id="library.library_group_user" model="res.groups">
+        <field name="name">Librarian</field>
+    </record>
+</odoo>

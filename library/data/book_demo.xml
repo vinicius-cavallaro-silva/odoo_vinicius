@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!--
+# © 2022 PCCube
+# @author: vcS <vcavallarosilva@pccube.com>
+# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
+-->
+<odoo noupdate="1">
+<!--  <record model="res.partner" id="res_partner_mario">-->
+<!--    <field name="name">O Auto da Compadecida</field>-->
+<!--  </record>-->
+<!--  <record model="library.book" id="library_book_auto_da_compadecida">-->
+<!--    <field name="name">Rua dos Cataventos</field>-->
+<!--    <field name="author_ids"-->
+<!--           eval="[(4, ref('res_partner_ariano'))]" />-->
+<!--    <field name="date_published">1940-01-01</field>-->
+<!--  </record>-->
+
+  <record model="res.partner" id="res_partner_huxley">
+    <field name="name">Aldous Huxley</field>
+  </record>
+  <record model="library.book" id="library_book_bnw">
+    <field name="name">Brave New World</field>
+    <field name="author_ids"
+           eval="[(4, ref('res_partner_huxley'))]" />
+    <field name="date_published">1932-01-01</field>
+  </record>
+</odoo>
