@@ -10,7 +10,7 @@
     'description': 'Members can borrow books from the library.',
     'author': 'Vinicius Cavallaro da Silva, PcCube',
     'website': "https://www.pccube.com",
-    'depends': ['library_member'],
+    'depends': ['library_member', 'mail'],
     'data': [
         'security/ir.model.access.csv',
         'views/library_menu.xml',

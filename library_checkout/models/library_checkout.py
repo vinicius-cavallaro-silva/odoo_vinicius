@@ -88,7 +88,34 @@ class Checkout(models.Model):
             if new_state == 'done' and self.state != 'done':
                 vals['close_date'] = fields.Date.today()
         super().write(vals)
-        # Code after write: can use `self`, with the updated values
+        return True
+
+    # member_image = fields.Binary(related='member_id.partner_id.image')
+    num_other_checkouts = fields.Integer(compute='_compute_num_other_checkouts')
+
+    def _compute_num_other_checkouts(self):
+        domain = [
+            ('member_id', '=', self.member_id.id),
+            ('state', 'in', ['open']),
+            ('id', '!=', self.id)]
+        return self.search_count(domain)
+
+    num_books = fields.Integer(
+        compute='_compute_num_books',
+        store=True)
+
+    @api.depends('line_ids')
+    def _compute_num_books(self):
+        for book in self:
+            book.num_books = len(book.line_ids)
+
+    def button_done(self):
+        Stage = self.env['library.checkout.stage']
+        done_stage = Stage.search(
+            [('state', '=', 'done')],
+            limit=1)
+        for checkout in self:
+            checkout.stage_id = done_stage
         return True
 
 
