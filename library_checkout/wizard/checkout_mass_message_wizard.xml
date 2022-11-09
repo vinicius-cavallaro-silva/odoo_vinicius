@@ -31,11 +31,11 @@
     <act_window id="action_checkout_message"
                 name="Send Messages"
                 res_model="library.checkout.massmessage"
-                view_mode="form"
-                target="new"
-    />
-    <!--                multi="True"-->
-    <!--                view_type="form" -->
+                    view_mode="form"
+                    target="new"
+/>
+<!--                multi="True"-->
+<!--                view_type="form" -->
 
 
 </odoo>
