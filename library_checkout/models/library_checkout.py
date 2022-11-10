@@ -4,6 +4,10 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
 from odoo import api, exceptions, fields, models
+import logging
+
+
+_logger = logging.getLogger(__name__)
 
 class Checkout(models.Model):
     _name = 'library.checkout'
@@ -90,15 +94,17 @@ class Checkout(models.Model):
         super().write(vals)
         return True
 
-    # member_image = fields.Binary(related='member_id.partner_id.image')
+    member_image = fields.Binary(related='member_id.partner_id.image')
     num_other_checkouts = fields.Integer(compute='_compute_num_other_checkouts')
 
     def _compute_num_other_checkouts(self):
-        domain = [
-            ('member_id', '=', self.member_id.id),
-            ('state', 'in', ['open']),
-            ('id', '!=', self.id)]
-        return self.search_count(domain)
+        for rec in self:
+            domain = [
+                ('member_id', '=', self.member_id.id),
+                ('state', 'in', ['open']),
+                ('id', '!=', self.id)]
+            rec.num_other_checkouts = self.env['library.checkout'].search_count(domain)
+            return
 
     num_books = fields.Integer(
         compute='_compute_num_books',

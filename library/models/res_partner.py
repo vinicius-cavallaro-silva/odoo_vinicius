@@ -9,6 +9,7 @@ from odoo import fields, models
 class Partner(models.Model):
     _inherit = 'res.partner'
 
+    image = fields.Binary(string="Image")
     published_book_ids = fields.One2many(
         'library.book',  # related model
         'publisher_id',  # field for "this" on related model

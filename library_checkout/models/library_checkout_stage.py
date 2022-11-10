@@ -16,9 +16,9 @@ class CheckoutStage(models.Model):
     active = fields.Boolean(default=True)
     fold = fields.Boolean()
     state = fields.Selection(
-        [('new','New'),
-         ('open','Borrowed'),
-         ('done','Returned'),
+        [('new', 'New'),
+         ('open', 'Borrowed'),
+         ('done', 'Returned'),
          ('cancel', 'Cancelled')],
         default='new',
     )
