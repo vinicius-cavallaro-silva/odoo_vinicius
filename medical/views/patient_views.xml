@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+# © 2022 PCCube
+# @author: vcS <vcavallarosilva@pccube.com>
+# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+    <record id="view_res_partner_form_inherit" model="ir.ui.view">
+        <field name="name">Patients</field>
+        <field name="model">res.partner</field>
+        <field name="type">form</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <field name="vat" position="after">
+                <field name="is_doctor" string="É médico?"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="medical_patient_action" model="ir.actions.act_window">
+        <field name="name">Pacientes</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Click to add a new Test
+            </p>
+        </field>
+    </record>
+</odoo>

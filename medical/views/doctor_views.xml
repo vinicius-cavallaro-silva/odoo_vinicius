@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+# © 2022 PCCube
+# @author: vcS <vcavallarosilva@pccube.com>
+# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+    <record id="medical_doctor_action" model="ir.actions.act_window">
+        <field name="name">Médicos</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">sale.order</field>
+        <field name="view_mode">tree</field>
+        <field name="help" type="html">
+          <p class="oe_view_nocontent_create">
+            Click to add a new Test
+          </p>
+        </field>
+    </record>
+</odoo>

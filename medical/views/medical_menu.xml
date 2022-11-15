@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+# © 2022 PCCube
+# @author: vcS <vcavallarosilva@pccube.com>
+# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+    <!-- Medical App Menu -->
+    <menuitem id="medical_menu"
+              name="Medical"
+    />
+
+    <menuitem id="menu_surgery"
+              name="Cirurgias"
+              parent="medical_menu"
+              action="medical_surgery_action"
+    />
+
+    <menuitem id="menu_patient"
+              name="Pacientes"
+              parent="medical_menu"
+              action="medical_patient_action"
+    />
+
+    <menuitem id="menu_doctor"
+              name="Médicos"
+              parent="medical_menu"
+              action="medical_doctor_action"
+    />
+
+    <menuitem id="menu_configuration"
+              name="Configurações"
+              parent="medical_menu"
+              action="medical_configuration_action"
+    />
+
+</odoo>
