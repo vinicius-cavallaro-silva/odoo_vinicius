@@ -5,6 +5,7 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 -->
 <odoo>
+
     <template id="book_list_extended"
             name="Extended Book List"
             inherit_id="library.book_list_template">

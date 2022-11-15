@@ -11,7 +11,7 @@
     <record id="member_portal_rule" model="ir.rule">
       <field name="name">Library Member Portal Access</field>
       <field name="model_id" ref="library_member.model_library_member"/>
-      <field name="domain_force">
+      <field name="_force">
           [('user_id', '=', user.id)]
       </field>
       <field name="groups" eval="[(4,ref('base.group_portal'))]"/>
