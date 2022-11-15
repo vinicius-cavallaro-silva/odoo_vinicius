@@ -8,6 +8,12 @@ from odoo import fields, models
 class SaleOrder(models.Model):
     _inherit = "sale.order"
 
+    participation_degree = fields.Selection(
+        [('Main', 'Principal'),
+         ('Standard', 'Padrão'),
+         ('Basic', 'Básico')
+         ])
+
     # partner_id = fields.Many2one('res.partner', delegate=True, ondelete='cascade', required=True)
 
     # hired_cod_provider = fields.Char(string='Cód.Operadora/CNPJ/CPF do Contratado')
@@ -24,11 +30,7 @@ class SaleOrder(models.Model):
     #
     #
 
-    # participation_degree = fields.Selection(
-    #     [('Main', 'Principal'),
-    #      ('Standard', 'Padrão'),
-    #      ('Basic', 'Básico')
-    #      ])
+
     # professional_performer_name = fields.Char(string='Nome do Profissional Executante')
     # professional_board = fields.Char(string='Conselho Profissional')
     # board_number = fields.Integer(string='Número do Conselho')
