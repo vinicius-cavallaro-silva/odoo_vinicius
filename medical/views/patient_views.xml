@@ -5,16 +5,21 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 -->
 <odoo>
-
     <record id="view_res_partner_patients_form_inherit" model="ir.ui.view">
         <field name="name">Patients</field>
         <field name="model">res.partner</field>
         <field name="type">form</field>
         <field name="inherit_id" ref="base.view_partner_form"/>
         <field name="arch" type="xml">
+            <xpath expr="//field[@name='title']" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </xpath>
+            <xpath expr="//field[@name='function']" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </xpath>
             <field name="vat" position="after">
                 <field name="is_doctor" string="É médico?"/>
-<!--                <field name="is_patient" string="Paciente?"/>-->
+<!--                <field name="cod_cnes" string="Código CNES" attrs="{'invisible': ['is_doctor', '=', 'True']}"/>-->
 <!--                <field name="national_health_card" string="Número do Cartão Nacional de Saúde:"/>-->
             </field>
         </field>

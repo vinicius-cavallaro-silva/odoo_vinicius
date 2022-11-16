@@ -6,12 +6,9 @@ class ResPartner(models.Model):
     _inherit = ['res.partner']
 
     is_doctor = fields.Boolean(string="É médico?")
-    # national_health_card = fields.Char(string='Número do Cartão Nacional de Saúde')
     # cod_cnes = fields.Char(string='Código CNES')
-    # is_patient = fields.Boolean(string="Paciente?")
+    # national_health_card = fields.Char(string='Número do Cartão Nacional de Saúde')
 
-
-    # accommodation = fields.Char(string='Acomodação')
 
     # state = fields.Selection([('PR', 'PARANÁ'),
     #                           ('SC', 'SANTA CATARINA'),

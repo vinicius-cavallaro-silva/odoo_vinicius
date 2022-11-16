@@ -13,9 +13,7 @@
         <field name="inherit_id" ref="base.view_partner_form"/>
         <field name="arch" type="xml">
             <field name="vat" position="after">
-                <field name="is_doctor" string="É médico?"/>
-<!--                <field name="is_patient" string="Paciente?"/>-->
-<!--                <field name="national_health_card" string="Número do Cartão Nacional de Saúde:"/>-->
+<!--        <field name="national_health_card" string="Número do Cartão Nacional de Saúde:"/>-->
             </field>
         </field>
     </record>
