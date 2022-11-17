@@ -2,12 +2,12 @@ from odoo import fields, models
 
 
 class ResPartner(models.Model):
-    _name = 'res.partner'
     _inherit = ['res.partner']
 
-    is_doctor = fields.Boolean(string="É médico?")
-    # cod_cnes = fields.Char(string='Código CNES')
-    # national_health_card = fields.Char(string='Número do Cartão Nacional de Saúde')
+    is_doctor = fields.Boolean(string='É médico?')
+    is_patient = fields.Boolean(string='Paciente?')
+    cod_cnes = fields.Char(string='Código CNES')
+    # health_card = fields.Char(string='Número do Cartão Nacional de Saúde')
 
 
     # state = fields.Selection([('PR', 'PARANÁ'),

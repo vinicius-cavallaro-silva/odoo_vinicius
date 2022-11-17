@@ -6,14 +6,26 @@
 -->
 <odoo>
 
-        <record id="view_res_partner_doctors_form_inherit" model="ir.ui.view">
+    <record id="view_partner_patients_tree_inherit" model="ir.ui.view">
+        <field name="name">Physician List View</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_tree"/>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="cod_cnes"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_res_partner_doctors_form_inherit" model="ir.ui.view">
         <field name="name">Doctors</field>
         <field name="model">res.partner</field>
         <field name="type">form</field>
         <field name="inherit_id" ref="base.view_partner_form"/>
         <field name="arch" type="xml">
             <field name="vat" position="after">
-<!--        <field name="national_health_card" string="Número do Cartão Nacional de Saúde:"/>-->
+                <field name="is_doctor"/>
+                <field name="cod_cnes"/>
             </field>
         </field>
     </record>
@@ -23,11 +35,11 @@
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">res.partner</field>
         <field name="view_mode">tree,form</field>
-        <field name="domain">[['is_doctor', '=', True]]</field>
+        <field name="domain">[('is_doctor', '=', True)]</field>
         <field name="help" type="html">
-          <p class="oe_view_nocontent_create">
-            Click to add a new Test
-          </p>
+            <p class="oe_view_nocontent_create">
+                Click to add a new Test
+            </p>
         </field>
     </record>
 </odoo>
