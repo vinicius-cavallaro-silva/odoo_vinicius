@@ -6,17 +6,17 @@
 -->
 <odoo>
 
-    <record model="ir.ui.view" id="view_patients_tree">
-            <field name="name">Patients</field>
-            <field name="model">res.partner</field>
-            <field eval="7" name="priority"/>
-            <field name="arch" type="xml">
-                <tree string="Patients">
-                    <field name="name"/>
-                    <field name="national_health_card"/>
-                </tree>
-            </field>
-    </record>
+<!--    <record model="ir.ui.view" id="view_patients_tree">-->
+<!--            <field name="name">Patients</field>-->
+<!--            <field name="model">res.partner</field>-->
+<!--            <field eval="7" name="priority"/>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <tree>-->
+<!--                    <field name="name"/>-->
+<!--                    <field name="national_health_card"/>-->
+<!--                </tree>-->
+<!--            </field>-->
+<!--    </record>-->
 
     <record id="view_partner_patients_form_inherit" model="ir.ui.view">
         <field name="name">Patients</field>

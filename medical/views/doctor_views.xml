@@ -6,18 +6,24 @@
 -->
 <odoo>
 
-    <record model="ir.ui.view" id="view_doctors_tree">
-        <field name="name">Doctors</field>
+    <record id="view_partner_patients_tree_inherit" model="ir.ui.view">
+        <field name="name">Physician List View</field>
         <field name="model">res.partner</field>
-        <field eval="8" name="priority"/>
+        <field name="inherit_id" ref="base.view_partner_tree"/>
         <field name="arch" type="xml">
-            <tree string="Doctors">
-                <field name="name"/>
+            <xpath expr="//field[@name='state_id']" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </xpath>
+            <field name="display_name" position="after">
                 <field name="cod_cnes"/>
-            </tree>
+            </field>
+<!--             <xpath expr="//field[@name='display_name'" position="after">-->
+<!--                 <field name="cod_cnes" optional="hidden" attrs="{'invisible': [('is_doctor', '=', False)]}" />-->
+<!--             </xpath>-->
+
         </field>
     </record>
-
+    
 
     <record id="view_res_partner_doctors_form_inherit" model="ir.ui.view">
         <field name="name">Doctors</field>
