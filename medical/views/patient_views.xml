@@ -5,15 +5,17 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 -->
 <odoo>
-    <record id="view_partner_patients_tree_inherit" model="ir.ui.view">
-        <field name="name">Patients List View</field>
-        <field name="model">res.partner</field>
-        <field name="inherit_id" ref="base.view_partner_tree"/>
-        <field name="arch" type="xml">
-            <tree>
-                <field name="is_doctor"/>
-            </tree>
-        </field>
+
+    <record model="ir.ui.view" id="view_patients_tree">
+            <field name="name">Patients</field>
+            <field name="model">res.partner</field>
+            <field eval="7" name="priority"/>
+            <field name="arch" type="xml">
+                <tree string="Patients">
+                    <field name="name"/>
+                    <field name="national_health_card"/>
+                </tree>
+            </field>
     </record>
 
     <record id="view_partner_patients_form_inherit" model="ir.ui.view">
@@ -33,7 +35,7 @@
             </xpath>
             <field name="vat" position="after">
                 <field name="is_patient"/>
-                <!--                <field name="national_health_card" string="Número do Cartão Nacional de Saúde:"/>-->
+                <field name="national_health_card" attrs="{'invisible': [('is_patient', '=', False)]}"/>
             </field>
         </field>
     </record>

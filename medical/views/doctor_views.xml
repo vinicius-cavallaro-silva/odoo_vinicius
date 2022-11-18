@@ -6,16 +6,18 @@
 -->
 <odoo>
 
-    <record id="view_partner_patients_tree_inherit" model="ir.ui.view">
-        <field name="name">Physician List View</field>
+    <record model="ir.ui.view" id="view_doctors_tree">
+        <field name="name">Doctors</field>
         <field name="model">res.partner</field>
-        <field name="inherit_id" ref="base.view_partner_tree"/>
+        <field eval="8" name="priority"/>
         <field name="arch" type="xml">
-            <tree>
+            <tree string="Doctors">
+                <field name="name"/>
                 <field name="cod_cnes"/>
             </tree>
         </field>
     </record>
+
 
     <record id="view_res_partner_doctors_form_inherit" model="ir.ui.view">
         <field name="name">Doctors</field>
@@ -25,7 +27,7 @@
         <field name="arch" type="xml">
             <field name="vat" position="after">
                 <field name="is_doctor"/>
-                <field name="cod_cnes"/>
+                <field name="cod_cnes" attrs="{'invisible': [('is_doctor', '=', False)]}"/>
             </field>
         </field>
     </record>
