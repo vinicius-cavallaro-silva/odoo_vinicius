@@ -18,6 +18,24 @@
 <!--            </field>-->
 <!--    </record>-->
 
+    <record id="view_partner_patients_tree_inherit" model="ir.ui.view">
+        <field name="name">Patients List View</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='state_id']" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </xpath>
+            <field name="display_name" position="after">
+                <field name="national_health_card"/>
+            </field>
+<!--             <xpath expr="//field[@name='display_name'" position="after">-->
+<!--                 <field name="cod_cnes" optional="hidden" attrs="{'invisible': [('is_doctor', '=', False)]}" />-->
+<!--             </xpath>-->
+
+        </field>
+    </record>
+
     <record id="view_partner_patients_form_inherit" model="ir.ui.view">
         <field name="name">Patients</field>
         <field name="model">res.partner</field>

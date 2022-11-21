@@ -6,7 +6,7 @@
 -->
 <odoo>
 
-    <record id="view_partner_patients_tree_inherit" model="ir.ui.view">
+    <record id="view_partner_doctors_tree_inherit" model="ir.ui.view">
         <field name="name">Physician List View</field>
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_tree"/>
