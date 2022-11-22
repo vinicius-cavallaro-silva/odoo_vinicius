@@ -10,7 +10,7 @@
             """,
     'author': 'Vinicius Cavallaro da Silva, PcCube',
     'website': "https://www.pccube.com",
-    "depends": ['sale'],
+    "depends": ['base', 'sale'],
     "data": [
         'security/ir.model.access.csv',
         'views/surgery_views.xml',
