@@ -5,6 +5,7 @@
     'name': 'Medical',
     'version': '13.0.1.0.0',
     'category': 'Pccube',
+    'sequence': '-100',
     'description': """
             Module made to fill medical forms
             """,
