@@ -14,10 +14,10 @@
     "depends": ['base', 'sale'],
     "data": [
         'security/ir.model.access.csv',
-        'views/surgery_views.xml',
+        # 'views/surgery_views.xml',
         'views/patient_views.xml',
-        'views/doctor_views.xml',
-        'views/configuration_views.xml',
+        # 'views/doctor_views.xml',
+        # 'views/configuration_views.xml',
         'views/medical_menu.xml',
     ],
     'application': True,

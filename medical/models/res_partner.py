@@ -1,3 +1,8 @@
+# -*- coding: utf-8 -*-
+# © 2022 PCCube
+# @author: vcS <vcavallarosilva@pccube.com>
+# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
+
 from odoo import fields, models
 
 
@@ -6,8 +11,6 @@ class ResPartner(models.Model):
 
     is_doctor = fields.Boolean(string='É médico?')
     is_patient = fields.Boolean(string='Paciente?')
-    cod_cnes = fields.Char(string='Código CNES')
-    national_health_card = fields.Char(string='Número do Cartão Nacional de Saúde')
 
 
     # state = fields.Selection([('PR', 'PARANÁ'),
@@ -33,9 +36,7 @@ class ResPartner(models.Model):
     # hired_performer_cod_provider = fields.Char(string='Cód.Operadora/CNPJ/CPF do Contratado Executante')
     # hired_performer_name = fields.Char(string='Nome do Contratado Executante')
 
-    #
-    #
-    #
+
     # hired_performer_name = fields.Char(string='Nome do Contratado Executante')
     #
     #

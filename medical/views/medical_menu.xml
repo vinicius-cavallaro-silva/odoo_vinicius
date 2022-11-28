@@ -10,11 +10,11 @@
               name="Medical"
     />
 
-    <menuitem id="menu_surgery"
-              name="Cirurgias"
-              parent="medical_menu"
-              action="medical_surgery_action"
-    />
+<!--    <menuitem id="menu_surgery"-->
+<!--              name="Cirurgias"-->
+<!--              parent="medical_menu"-->
+<!--              action="medical_surgery_action"-->
+<!--    />-->
 
     <menuitem id="menu_patient"
               name="Pacientes"
@@ -22,16 +22,16 @@
               action="medical_patient_action"
     />
 
-    <menuitem id="menu_doctor"
-              name="Médicos"
-              parent="medical_menu"
-              action="medical_doctor_action"
-    />
+<!--    <menuitem id="menu_doctor"-->
+<!--              name="Médicos"-->
+<!--              parent="medical_menu"-->
+<!--              action="medical_doctor_action"-->
+<!--    />-->
 
-    <menuitem id="menu_configuration"
-              name="Configurações"
-              parent="medical_menu"
-              action="medical_configuration_action"
-    />
+<!--    <menuitem id="menu_configuration"-->
+<!--              name="Configurações"-->
+<!--              parent="medical_menu"-->
+<!--              action="medical_configuration_action"-->
+<!--    />-->
 
 </odoo>
