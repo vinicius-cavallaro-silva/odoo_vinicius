@@ -7,7 +7,7 @@
 
 <odoo>
     <record id="medical_patients_tree" model="ir.ui.view">
-        <field name="name">Patients</field>
+        <field name="name">medical.patient.tree</field>
         <field name="model">medical.patient</field>
         <!--        <field name="type">tree</field>-->
 
@@ -20,8 +20,30 @@
             </tree>
         </field>
     </record>
+
+    <record id="medical_patients_search" model="ir.ui.view">
+        <field name="name">medical.patient.search</field>
+        <field name="model">medical.patient</field>
+        <!--        <field name="type">tree</field>-->
+
+        <field name="arch" type="xml">
+            <search string="Patients">
+                <field name="name"/>
+                <field name="national_health_card"/>
+                <field name="gender"/>
+                <field name="age"/>
+                <filter string="Homens" name="masculino" domain="[('gender', '=', 'masculino')]"/>
+                <filter string="Mulheres" name="feminino" domain="[('gender', '=', 'feminino')]"/>
+                <group expand="1" string="Agrupar por">
+                    <field string="Sexo" name="gender" context="{'group_by': 'gender'}"></field>
+                    <field string="Idade" name="age" context="{'group_by': 'age'}"></field>
+                </group>
+            </search>
+        </field>
+    </record>
+
     <record id="medical_patients_form" model="ir.ui.view">
-        <field name="name">Patients</field>
+        <field name="name">medical.patient.form</field>
         <field name="model">medical.patient</field>
         <!--        <field name="type">form</field>-->
 

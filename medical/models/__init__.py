@@ -4,4 +4,5 @@
 
 
 from . import patient
+from . import sale_order
 # from . import doctor
