@@ -3,7 +3,5 @@
 # @author: vcS <vcavallarosilva@pccube.com>
 
 
-# from . import sale_order
-# from . import res_partner
 from . import patient
 # from . import doctor

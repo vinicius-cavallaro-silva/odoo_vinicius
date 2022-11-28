@@ -3,12 +3,14 @@
 # @author: vcS <vcavallarosilva@pccube.com>
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
-from odoo import api, fields, models, _
+from odoo import api, fields, models
 
 class Patient(models.Model):
     _name = 'medical.patient'
-    _inherit = ['res.partner']
+    _description = 'Patient'
 
-    national_health_card = fields.Char(string="Cartão Nacional de Saúde")
-    channel_ids = fields.Many2many('mail.channel', 'mail_channel_patient', 'partner_id', 'channel_id')
-    visitor_ids = fields.Many2many('website.visitor', 'website_visitor_patient_rel', 'partner_id', 'visitor_id')
+    name = fields.Char(string='Nome', required=True)
+    age = fields.Integer(string='Idade')
+    gender = fields.Selection([('masculino', 'Masculino'),
+                               ('feminino', 'Feminino')])
+    national_health_card = fields.Char(string='Cartão Nacional de Saúde')
